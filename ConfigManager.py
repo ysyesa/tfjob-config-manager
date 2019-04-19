@@ -1,4 +1,4 @@
-class ConfigurationManager:
+class ConfigManager:
     def __init__(self, filename, special_keywords=None):
         self.file = open(filename, "w")
         self.special_keywords = ["containers"] if special_keywords is None else special_keywords

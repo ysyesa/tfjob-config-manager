@@ -2,7 +2,7 @@ from flask import Flask
 from flask import request
 from flask import jsonify
 import subprocess
-from ConfigurationManager import *
+from ConfigManager import *
 
 app = Flask(__name__)
 
@@ -28,7 +28,7 @@ def modify():
             tfjob_ps_image is None:
         return jsonify("Please complete all arguments needed!")
 
-    config_manager = ConfigurationManager(filename)
+    config_manager = ConfigManager(filename)
     config_manager.set_tfjob_name(tfjob_name)
     config_manager.set_tfjob_master_replica(tfjob_master_replica)
     config_manager.set_tfjob_master_image(tfjob_master_image)
