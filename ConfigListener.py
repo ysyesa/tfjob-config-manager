@@ -14,7 +14,7 @@ def root():
 
 @app.route("/modify", methods=["POST"])
 def modify():
-    filename = "/app/out/" + request.form["filename"]
+    filename = "out/" + request.form["filename"]
     tfjob_name = request.form["tfjob_name"]
     tfjob_master_replica = request.form["tfjob_master_replica"]
     tfjob_master_image = request.form["tfjob_master_image"]
