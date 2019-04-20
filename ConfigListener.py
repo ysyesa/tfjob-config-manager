@@ -38,4 +38,7 @@ def modify():
     config_manager.set_tfjob_ps_image(tfjob_ps_image)
     config_manager.generate_config_file()
 
+    subprocess.call(["kubectl", "delete", "tfjob", tfjob_name])
+    subprocess.call(["kubectl", "apply", "-f", filename])
+
     return jsonify("Configuration generated and applied.")
